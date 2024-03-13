@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #282c34;
+            color: white;
+        }
+
+        #calculator {
+            max-width: 300px;
+            margin: auto;
+            border: 2px solid #61dafb;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: #1e1e1e;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background-color: #2c2c2c;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 20px;
+            font-size: 16px;
+            margin: 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #61dafb;
+            color: #282c34;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f05102;
+        }
+
+        #equals {
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        #equals:hover {
+            background-color: #4cae4c;
+        }
+
+        #clear {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        #clear:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CALCULATOR</h1>
+
+    <div id="calculator">
+        <input type="text" id="display" disabled>
+        <br>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('+')">+</button>
+        <br>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('-')">-</button>
+        <br>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('*')">*</button>
+        <br>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button id="clear" onclick="clearDisplay()">C</button>
+        <button id="equals" onclick="calculateResult()">=</button>
+        <button onclick="appendToDisplay('/')">/</button>
+    </div>
+
+    <script>
+        // JavaScript code
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+       
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculateResult() {
+            var expression = document.getElementById('display').value;
+            var result;
+            try {
+                result = eval(expression);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+
+</body>
+</html>
