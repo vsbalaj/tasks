@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    </head>
+    <body>
+        <main class="background">
+            <h1 style="text-align: center;">Register Now</h1>
+                <section class="background_1">
+                    <form method="POST" action="/set_password" style="font-size: 150%; margin-left: 10%; margin-top: 15%;">
+                        <label for="username">Username</label>
+                        <br>
+                        <input id="username" type="text" name="username" class="box">
+                        <br>
+                        <label for="password">Password</label>
+                        <br>
+                        <input id="password" type="password" name="password" class="box">
+                        <br>
+                        <input type="submit" value="submit" id="input">
+                    </form>  
+                </section>
+        </main>
+        <script>
+            document.getElementById("input").addEventListener("click",function(){
+                alert("Successfully Register")
+            })
+        </script>
+    </body>
+</html>

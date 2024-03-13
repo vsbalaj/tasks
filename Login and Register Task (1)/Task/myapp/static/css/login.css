@@ -1,0 +1,19 @@
+.background{
+    background-color: rgb(155, 184, 184);
+    border: 1px solid black;
+    height: 700px;
+    /* width: 100%; */
+}
+
+.background_1{
+    /* border: solid black; */
+    background-color: orange;
+    margin-top: 15%;
+    margin-left: 35%;
+    height: 250px;
+    width: 425px;
+}
+
+.box{
+    size: 10%;
+}
